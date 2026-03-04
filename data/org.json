@@ -1,0 +1,32 @@
+{
+  "entities": [
+    {
+      "id": "hk-danmark",
+      "fields": {
+        "name": { "value": "HK Danmark", "sources": ["https://www.hk.dk/omhk/fakta-om-hk"], "confidence": "Bekræftet" },
+        "type": { "value": "Forbund", "sources": ["https://www.hk.dk/omhk/fakta-om-hk"], "confidence": "Bekræftet" },
+        "topAuthority": { "value": "Kongressen (ordinært hvert 4. år)", "sources": ["https://www.hk.dk/omhk/fakta-om-hk"], "confidence": "Bekræftet" }
+      }
+    },
+    {
+      "id": "hk-hovedstaden",
+      "fields": {
+        "name": { "value": "HK Hovedstaden", "sources": ["https://www.hk.dk/hovedstaden"], "confidence": "Bekræftet" },
+        "type": { "value": "Lokalafdeling", "sources": ["https://www.hk.dk/omhk/afdeling/hk-hovedstaden/om-hk-hovedstaden-original"], "confidence": "Bekræftet" },
+        "description": { "value": "Den største lokalafdeling i HK med over 75.000 medlemmer i Region Hovedstaden samt i Grønland og på Færøerne.", "sources": ["https://www.hk.dk/omhk/afdeling/hk-hovedstaden/om-hk-hovedstaden-original"], "confidence": "Bekræftet" },
+        "topAuthority": { "value": "Repræsentantskabet", "sources": ["https://www.hk.dk/omhk/afdeling/hk-hovedstaden/om-hk-hovedstaden-original"], "confidence": "Bekræftet" },
+        "representationCount": { "value": 171, "sources": ["https://www.hk.dk/omhk/afdeling/hk-hovedstaden/om-hk-hovedstaden-original"], "confidence": "Bekræftet" }
+      }
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel-hovedstaden-under-hk",
+      "fields": {
+        "from": { "value": "hk-hovedstaden", "sources": ["https://www.hk.dk/omhk/afdeling/hk-hovedstaden/om-hk-hovedstaden-original"], "confidence": "Bekræftet" },
+        "to": { "value": "hk-danmark", "sources": ["https://www.hk.dk/omhk/fakta-om-hk"], "confidence": "Bekræftet" },
+        "relationType": { "value": "lokalafdeling-under-forbund", "sources": ["https://www.hk.dk/omhk/fakta-om-hk", "https://www.hk.dk/omhk/afdeling/hk-hovedstaden/om-hk-hovedstaden-original"], "confidence": "Delvist bekræftet" }
+      }
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HK Hovedstaden – Partnerbriefing</title>
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <h1>HK Hovedstaden – Intern partnerbriefing</h1>
+      <nav aria-label="Hovednavigation">
+        <a href="#overblik">Overblik</a>
+        <a href="#organisation">Organisation & Ledelse</a>
+        <a href="#personer">Personer</a>
+        <a href="#medlemmer">Medlemmer & Relation</a>
+        <a href="#metode">Metode & Kilder</a>
+      </nav>
+    </header>
+
+    <main id="app" tabindex="-1"></main>
+
+    <dialog id="person-modal" aria-label="Persondetaljer">
+      <button id="close-modal" aria-label="Luk">✕</button>
+      <div id="modal-content"></div>
+    </dialog>
+
+    <script type="module" src="src/app.js"></script>
+  </body>
+</html>
