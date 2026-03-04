@@ -53,6 +53,14 @@
           "sources": ["https://www.hk.dk/omhk/fakta-om-hk/politisk-ledelse/hk-danmarks-hovedbestyrelse"],
           "confidence": "Bekræftet"
         }
+        "name": {"value": "Peter Jacques Jensen", "sources": ["https://www.hk.dk/omhk/fakta-om-hk/politisk-ledelse/hk-danmarks-hovedbestyrelse"], "confidence": "Bekræftet"},
+        "requestedNameVariant": {"value": "Peter Shaques Jensen (ikke fundet som officiel stavemåde i anvendte kilder)", "sources": ["https://www.hk.dk/omhk/fakta-om-hk/politisk-ledelse/hk-danmarks-hovedbestyrelse"], "confidence": "Ikke oplyst"},
+        "title": {"value": "Forperson, HK Hovedstaden", "sources": ["https://www.hk.dk/omhk/fakta-om-hk/politisk-ledelse/hk-danmarks-hovedbestyrelse"], "confidence": "Bekræftet"},
+        "responsibilities": {"value": "Ikke oplyst (offentligt)", "sources": ["https://www.hk.dk/omhk/fakta-om-hk/politisk-ledelse/hk-danmarks-hovedbestyrelse", "https://www.hk.dk/omhk/afdeling/hk-hovedstaden/om-hk-hovedstaden-original"], "confidence": "Ikke oplyst"},
+        "background": {"value": "Ikke oplyst (offentligt)", "sources": ["https://www.hk.dk/omhk/fakta-om-hk/politisk-ledelse/hk-danmarks-hovedbestyrelse"], "confidence": "Ikke oplyst"},
+        "category": {"value": "Politisk ledelse", "sources": ["https://www.hk.dk/omhk/fakta-om-hk/politisk-ledelse/hk-danmarks-hovedbestyrelse"], "confidence": "Bekræftet"},
+        "scope": {"value": "HK Hovedstaden", "sources": ["https://www.hk.dk/omhk/fakta-om-hk/politisk-ledelse/hk-danmarks-hovedbestyrelse"], "confidence": "Bekræftet"},
+        "politicalPosition": {"value": "Ikke oplyst", "sources": ["https://www.hk.dk/omhk/fakta-om-hk/politisk-ledelse/hk-danmarks-hovedbestyrelse"], "confidence": "Ikke oplyst"}
       }
     },
     {
@@ -61,6 +69,10 @@
         "name": {"value": "Mads Samsing", "sources": ["https://www.hk.dk/omhk/fakta-om-hk/politisk-ledelse/hk-danmarks-hovedbestyrelse"], "confidence": "Bekræftet"},
         "currentRole": {"value": "Forbundsformand, HK Danmark", "sources": ["https://www.hk.dk/omhk/fakta-om-hk/politisk-ledelse/hk-danmarks-hovedbestyrelse"], "confidence": "Bekræftet"},
         "category": {"value": "Politisk ledelse", "sources": ["https://www.hk.dk/omhk/fakta-om-hk/politisk-ledelse/hk-danmarks-hovedbestyrelse"], "confidence": "Bekræftet"}
+        "title": {"value": "Forbundsformand, HK Danmark", "sources": ["https://www.hk.dk/omhk/fakta-om-hk/politisk-ledelse/hk-danmarks-hovedbestyrelse"], "confidence": "Bekræftet"},
+        "category": {"value": "Politisk ledelse", "sources": ["https://www.hk.dk/omhk/fakta-om-hk/politisk-ledelse/hk-danmarks-hovedbestyrelse"], "confidence": "Bekræftet"},
+        "scope": {"value": "HK Danmark", "sources": ["https://www.hk.dk/omhk/fakta-om-hk/politisk-ledelse/hk-danmarks-hovedbestyrelse"], "confidence": "Bekræftet"},
+        "politicalPosition": {"value": "Ikke oplyst", "sources": ["https://www.hk.dk/omhk/fakta-om-hk/politisk-ledelse/hk-danmarks-hovedbestyrelse"], "confidence": "Ikke oplyst"}
       }
     }
   ]

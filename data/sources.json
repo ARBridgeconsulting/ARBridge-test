@@ -12,6 +12,11 @@
     "url": "https://www.hk.dk/omhk/organisationen",
     "visitedAt": "2026-03-04",
     "supports": ["Forbundsstruktur", "Kongres", "Sektorer"]
+    "id": "src-hk-organisationen",
+    "title": "Organisationsdiagram / HK organisationen",
+    "url": "https://www.hk.dk/omhk/organisationen",
+    "visitedAt": "2026-03-04",
+    "supports": ["HK overordnet organisationsstruktur", "Sektoropdeling"]
   },
   {
     "id": "src-hk-historie",
@@ -26,6 +31,14 @@
     "url": "https://www.hk.dk/omhk/fakta-om-hk/hks-medlemmer",
     "visitedAt": "2026-03-04",
     "supports": ["Medlemsprofiler", "Jobtyper og brancher"]
+    "supports": ["Historisk kontekst", "Stiftelsesoplysninger"]
+  },
+  {
+    "id": "src-hk-medlemsprofiler",
+    "title": "Hvem er HK's medlemmer?",
+    "url": "https://www.hk.dk/omhk/fakta-om-hk/hks-medlemmer",
+    "visitedAt": "2026-03-04",
+    "supports": ["Medlemsprofiler", "Brancher"]
   },
   {
     "id": "src-hk-hovedbestyrelse",
@@ -40,6 +53,21 @@
     "url": "https://www.linkedin.com/in/peter-jacques-jensen-b39a6020/",
     "visitedAt": "2026-03-04",
     "supports": ["Reference til profil", "Begrænsning: login kan være påkrævet"]
+    "supports": ["Ledelsesroller", "Forperson HK Hovedstaden", "Hovedbestyrelsens mandat"]
+  },
+  {
+    "id": "src-hk-hovedstaden-om",
+    "title": "Om HK Hovedstaden",
+    "url": "https://www.hk.dk/omhk/afdeling/hk-hovedstaden/om-hk-hovedstaden-original",
+    "visitedAt": "2026-03-04",
+    "supports": ["Lokalafdelingsbeskrivelse", "Repræsentantskab", "Vedtægter"]
+  },
+  {
+    "id": "src-hk-medlemstal",
+    "title": "HK medlemstal",
+    "url": "https://www.hk.dk/omhk/fakta-om-hk/medlemstal",
+    "visitedAt": "2026-03-04",
+    "supports": ["Nøgletal for medlemmer"]
   },
   {
     "id": "src-hk-brancheklubber",
@@ -47,6 +75,7 @@
     "url": "https://www.hk.dk/omhk/afdeling/hk-hovedstaden/brancheklubber",
     "visitedAt": "2026-03-04",
     "supports": ["Tilbud: netværk og klubber"]
+    "supports": ["Tilbud: branchenetværk og klubber"]
   },
   {
     "id": "src-hk-jobboers",
@@ -58,6 +87,11 @@
   {
     "id": "src-hk-kalender-kurser",
     "title": "HK Hovedstaden kurser og arrangementer (kalender)",
+    "supports": ["Tilbud: jobbørs"]
+  },
+  {
+    "id": "src-hk-hovedstaden-kalender",
+    "title": "HK Hovedstaden kurser og arrangementer (kalender-filter)",
     "url": "https://www.hk.dk/aktuelt/kalender?topic-search=&searchTagString=&searchOrgString=hk%20hovedstaden&pageIndex=1&pageSize=10",
     "visitedAt": "2026-03-04",
     "supports": ["Tilbud: kurser og arrangementer"]
