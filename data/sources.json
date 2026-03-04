@@ -1,44 +1,65 @@
 [
   {
-    "id": "src-hk-hovedstaden-page",
-    "title": "HK Hovedstaden (forside)",
-    "url": "https://www.hk.dk/hovedstaden",
-    "visitedAt": "2026-03-04"
+    "id": "src-hk-organisationen",
+    "title": "Organisationsdiagram / HK organisationen",
+    "url": "https://www.hk.dk/omhk/organisationen",
+    "visitedAt": "2026-03-04",
+    "supports": ["HK overordnet organisationsstruktur", "Sektoropdeling"]
+  },
+  {
+    "id": "src-hk-historie",
+    "title": "HK's historie",
+    "url": "https://www.hk.dk/omhk/fakta-om-hk/historie",
+    "visitedAt": "2026-03-04",
+    "supports": ["Historisk kontekst", "Stiftelsesoplysninger"]
+  },
+  {
+    "id": "src-hk-medlemsprofiler",
+    "title": "Hvem er HK's medlemmer?",
+    "url": "https://www.hk.dk/omhk/fakta-om-hk/hks-medlemmer",
+    "visitedAt": "2026-03-04",
+    "supports": ["Medlemsprofiler", "Brancher"]
+  },
+  {
+    "id": "src-hk-hovedbestyrelse",
+    "title": "HK Danmarks hovedbestyrelse",
+    "url": "https://www.hk.dk/omhk/fakta-om-hk/politisk-ledelse/hk-danmarks-hovedbestyrelse",
+    "visitedAt": "2026-03-04",
+    "supports": ["Ledelsesroller", "Forperson HK Hovedstaden", "Hovedbestyrelsens mandat"]
   },
   {
     "id": "src-hk-hovedstaden-om",
     "title": "Om HK Hovedstaden",
     "url": "https://www.hk.dk/omhk/afdeling/hk-hovedstaden/om-hk-hovedstaden-original",
-    "visitedAt": "2026-03-04"
-  },
-  {
-    "id": "src-hk-fakta",
-    "title": "Fakta om HK",
-    "url": "https://www.hk.dk/omhk/fakta-om-hk",
-    "visitedAt": "2026-03-04"
-  },
-  {
-    "id": "src-hk-hovedbestyrelse",
-    "title": "HK's hovedbestyrelse",
-    "url": "https://www.hk.dk/omhk/fakta-om-hk/politisk-ledelse/hk-danmarks-hovedbestyrelse",
-    "visitedAt": "2026-03-04"
+    "visitedAt": "2026-03-04",
+    "supports": ["Lokalafdelingsbeskrivelse", "Repræsentantskab", "Vedtægter"]
   },
   {
     "id": "src-hk-medlemstal",
     "title": "HK medlemstal",
     "url": "https://www.hk.dk/omhk/fakta-om-hk/medlemstal",
-    "visitedAt": "2026-03-04"
+    "visitedAt": "2026-03-04",
+    "supports": ["Nøgletal for medlemmer"]
   },
   {
-    "id": "src-hk-oekonomi",
-    "title": "HK årsrapporter / regnskaber",
-    "url": "https://www.hk.dk/omhk/fakta-om-hk/oekonomi",
-    "visitedAt": "2026-03-04"
+    "id": "src-hk-brancheklubber",
+    "title": "Brancheklubber i HK Hovedstaden",
+    "url": "https://www.hk.dk/omhk/afdeling/hk-hovedstaden/brancheklubber",
+    "visitedAt": "2026-03-04",
+    "supports": ["Tilbud: branchenetværk og klubber"]
   },
   {
-    "id": "src-hk-2024-regnskab-pdf",
-    "title": "HK Danmark regnskab 2024 (PDF)",
-    "url": "https://www.hk.dk/-/media/dokumenter/om-hk/aarsregnskaber/hk_danmark_regnskab_2024_underskrevet.pdf",
-    "visitedAt": "2026-03-04"
+    "id": "src-hk-jobboers",
+    "title": "HK JobBørs",
+    "url": "https://www.hk.dk/karriere/jobboers",
+    "visitedAt": "2026-03-04",
+    "supports": ["Tilbud: jobbørs"]
+  },
+  {
+    "id": "src-hk-hovedstaden-kalender",
+    "title": "HK Hovedstaden kurser og arrangementer (kalender-filter)",
+    "url": "https://www.hk.dk/aktuelt/kalender?topic-search=&searchTagString=&searchOrgString=hk%20hovedstaden&pageIndex=1&pageSize=10",
+    "visitedAt": "2026-03-04",
+    "supports": ["Tilbud: kurser og arrangementer"]
   }
 ]

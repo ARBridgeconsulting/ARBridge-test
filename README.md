@@ -1,41 +1,39 @@
-# HK Hovedstaden – Partnerbriefing (intern)
+# HK Hovedstaden – intern partnerbriefing (GitHub Pages)
 
-Dette projekt er et faktabaseret briefing-site på dansk om **HK Hovedstaden** til intern brug i et konsulenthus.
+Professionelt, kildebaseret briefing-site om HK Hovedstaden til intern brug.
 
-## Kør lokalt
+## Lokal kørsel
 
 ```bash
 python3 -m http.server 4173
 ```
 
-Åbn derefter: `http://localhost:4173`
+Åbn: `http://localhost:4173/`
 
-## Datastruktur (single source of truth)
+## GitHub Pages kompatibilitet
 
-- `data/people.json` – personer med felt-niveau kilder.
-- `data/org.json` – organisationsenheder, relationer og roller med felt-niveau kilder.
-- `data/stats.json` – nøgletal med dato/år og felt-niveau kilder.
-- `data/sources.json` – samlet kildekatalog med besøgsdato.
+- Appen er statisk (ingen server-side runtime).
+- Alle links til data/assets bruger relative stier (`./data/...`, `./assets/...`), så den virker under repo-paths som `/ARBridge-test/`.
 
-## Opdatering af data/kilder
+## Datastruktur
 
-1. Find en offentlig, autoritativ kilde (primært `hk.dk`).
-2. Tilføj kilden i `data/sources.json` (titel, URL, besøgsdato).
-3. Opdater relevante felter i `people/org/stats` og angiv mindst én URL i `sources` på hvert felt.
-4. Sæt `confidence` pr. felt:
-   - `Bekræftet` = direkte, eksplicit oplysning i officiel kilde.
-   - `Delvist bekræftet` = indirekte/afledt eller ikke fuldt specificeret.
-   - `Ikke oplyst` = ikke dokumenteret offentligt.
+- `data/people.json` – personer med field-level citations (`value`, `sources[]`, `confidence`).
+- `data/org.json` – organisation, relationer og tilbud.
+- `data/stats.json` – nøgletal med opgørelsesdato.
+- `data/sources.json` – samlet kilderegister inkl. hvad kilden understøtter.
+
+## Opdatering af indhold
+
+1. Verificér fakta i officiel HK-kilde (offentligt tilgængelig).
+2. Tilføj/ret source i `data/sources.json`.
+3. Opdater felter i `people/org/stats` og behold mindst én kilde pr. felt.
+4. Brug confidence:
+   - `Bekræftet`
+   - `Delvist bekræftet`
+   - `Ikke oplyst`
 
 ## Tests
 
 ```bash
 node --test tests/schema.test.mjs tests/navigation.test.mjs
 ```
-
-- `schema.test.mjs` validerer JSON-struktur + field-level sources.
-- `navigation.test.mjs` verificerer, at hovednavigation og centrale sektioner findes i UI.
-
-## Bemærkning om stackvalg
-
-Opgaven anbefalede Next.js/Tailwind. Miljøet tillod ikke installation fra npm registry (403), derfor er løsningen implementeret som dependency-fri statisk webapp med fokus på samme informationsarkitektur, sporbarhed og printvenlig briefing.

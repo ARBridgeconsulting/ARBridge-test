@@ -1,116 +1,222 @@
-const today = new Date().toISOString().slice(0, 10);
+import { TOKENS } from './design-system.js';
+import { card, confidenceTag, section, sourceLinks } from './components/ui.js';
 
 const [peopleRes, orgRes, statsRes, sourcesRes] = await Promise.all([
-  fetch('data/people.json'),
-  fetch('data/org.json'),
-  fetch('data/stats.json'),
-  fetch('data/sources.json')
+  fetch('./data/people.json'),
+  fetch('./data/org.json'),
+  fetch('./data/stats.json'),
+  fetch('./data/sources.json')
 ]);
+
 const people = (await peopleRes.json()).people;
 const org = await orgRes.json();
 const stats = (await statsRes.json()).stats;
 const sources = await sourcesRes.json();
+const root = document.querySelector('#app');
 
-const app = document.getElementById('app');
+document.documentElement.style.setProperty('--primary', TOKENS.colors.primary);
 
-function sourceLinks(urls) {
-  return `<div class="small">Kilder: ${urls.map((u) => `<a href="${u}" target="_blank" rel="noreferrer">${u}</a>`).join(' · ')}</div>`;
+autoRender();
+
+function autoRender() {
+  const today = new Date().toISOString().slice(0, 10);
+  const hkstaden = org.entities.find((x) => x.id === 'hk-hovedstaden');
+
+  root.innerHTML = [
+    `<section class="hero" id="overblik">
+      <p class="eyebrow">Intern partnerbriefing</p>
+      <h1>HK Hovedstaden – faktabaseret overblik</h1>
+      <p class="lead">Sammenfattet beslutningsunderlag til rådgivning. Alle faktablokke har feltvise kilder og confidence-tags.</p>
+      <div class="hero-meta"><span>Senest opdateret: ${today}</span><a href="#metode">Se metode & kilder</a></div>
+    </section>`,
+
+    section(
+      'kpi',
+      'Nøgletal',
+      `<div class="kpi-grid">${stats
+        .map((s) =>
+          card({
+            title: s.fields.label.value,
+            body: String(s.fields.value.value),
+            meta: `Pr. ${s.fields.asOf.value}`,
+            confidence: s.fields.value.confidence,
+            sources: s.fields.value.sources
+          })
+        )
+        .join('')}</div>`
+    ),
+
+    section(
+      'organisation',
+      'Organisation & Ledelse',
+      `<div class="layout-two">
+        <div>
+          <p><b>Struktur:</b> HK Hovedstaden er en lokalafdeling under HK Danmark. Repræsentantskabet er øverste myndighed i HK Hovedstaden.</p>
+          ${sourceLinks([
+            'https://www.hk.dk/omhk/organisationen',
+            'https://www.hk.dk/omhk/afdeling/hk-hovedstaden/om-hk-hovedstaden-original'
+          ])}
+          <div class="profile-focus">
+            <h3>Ledelsesprofil: Peter Shaques Jensen (kilde-check)</h3>
+            ${renderPerson('peter-jacques-jensen')}
+          </div>
+        </div>
+        <div>
+          <figure class="diagram">
+            <img src="./assets/orgdiagram.svg" alt="Organisationsdiagram HK Hovedstaden" id="org-image" />
+            <figcaption>Redaktionel visualisering baseret på officielle HK-kilder.</figcaption>
+            ${sourceLinks(['https://www.hk.dk/omhk/organisationen', 'https://www.hk.dk/omhk/afdeling/hk-hovedstaden/om-hk-hovedstaden-original'])}
+            <button id="open-diagram" class="btn">Forstør diagram</button>
+          </figure>
+        </div>
+      </div>`
+    ),
+
+    section(
+      'personer',
+      'Personer',
+      `<div class="toolbar"><input id="person-search" placeholder="Søg navn/rolle" aria-label="Søg personer"/><select id="person-filter" aria-label="Filtrer kategori"><option>Alle</option><option>Politisk ledelse</option><option>Daglig ledelse</option><option>Udvalg</option><option>Andet</option></select></div>
+      <div id="people-list" class="people-grid"></div>`
+    ),
+
+    section(
+      'medlemmer',
+      'Medlemmer & Relation til HK Danmark',
+      `<div class="cards-3">
+        ${card({
+          title: 'HK overordnet struktur',
+          body: 'HK er organiseret i flere sektorer. Hovedbestyrelsen er øverste myndighed mellem kongresserne.',
+          confidence: 'Bekræftet',
+          sources: [
+            'https://www.hk.dk/omhk/organisationen',
+            'https://www.hk.dk/omhk/fakta-om-hk/politisk-ledelse/hk-danmarks-hovedbestyrelse'
+          ]
+        })}
+        ${card({
+          title: 'Medlemsprofiler',
+          body: 'HK repræsenterer bl.a. kontor, handel, it, økonomi, kommunikation, sundhed og service.',
+          confidence: 'Bekræftet',
+          sources: ['https://www.hk.dk/omhk/fakta-om-hk/hks-medlemmer']
+        })}
+        ${card({
+          title: 'Historisk kontekst',
+          body: 'HK-historien beskriver bl.a. forbundets stiftelse i 1900 og udvikling over 125 år.',
+          confidence: 'Bekræftet',
+          sources: ['https://www.hk.dk/omhk/fakta-om-hk/historie']
+        })}
+      </div>
+      <p class="note">Politisk ståsted for enkeltpersoner: <b>Ikke oplyst</b> i de anvendte officielle kilder.</p>`
+    ),
+
+    section(
+      'tilbud',
+      'HK Hovedstadens tilbud',
+      `<div class="cards-3">
+        ${card({
+          title: 'Branchenetværk og klubber',
+          body: hkstaden.fields.offersNetworking.value,
+          confidence: hkstaden.fields.offersNetworking.confidence,
+          sources: hkstaden.fields.offersNetworking.sources
+        })}
+        ${card({
+          title: 'Jobbørs',
+          body: hkstaden.fields.offersJobboard.value,
+          confidence: hkstaden.fields.offersJobboard.confidence,
+          sources: hkstaden.fields.offersJobboard.sources
+        })}
+        ${card({
+          title: 'Kurser',
+          body: hkstaden.fields.offersCourses.value,
+          confidence: hkstaden.fields.offersCourses.confidence,
+          sources: hkstaden.fields.offersCourses.sources
+        })}
+      </div>`
+    ),
+
+    section(
+      'metode',
+      'Metode & Kilder',
+      `<p>Data er indsamlet manuelt fra offentlige kilder. Hvert felt i datasættet har mindst én kilde-URL.</p>
+       <ul class="source-list">${sources
+         .map(
+           (s) =>
+             `<li><h3>${s.title}</h3><p><a href="${s.url}" target="_blank" rel="noreferrer">${s.url}</a></p><p class="meta">Besøgt: ${s.visitedAt} · Understøtter: ${s.supports.join(', ')}</p></li>`
+         )
+         .join('')}</ul>
+       <p class="note">Begrænsning: detaljeret baggrund/ansvar for Peter Jacques Jensen fremgår ikke eksplicit i de anvendte åbne kilder.</p>`
+    )
+  ].join('');
+
+  bindPeople();
+  bindDiagramModal();
 }
 
-function tag(conf) {
-  return `<span class="tag ${conf}">${conf}</span>`;
+function renderPerson(id) {
+  const p = people.find((x) => x.id === id);
+  if (!p) return '<p>Ikke oplyst (offentligt)</p>';
+  return `<div class="person-detail">${Object.entries(p.fields)
+    .map(([k, v]) => `<p><b>${k}</b>: ${v.value} ${confidenceTag(v.confidence)} ${sourceLinks(v.sources)}</p>`)
+    .join('')}</div>`;
 }
 
-function render() {
-  app.innerHTML = `
-    <section class="section" id="overblik">
-      <h2>Overblik</h2>
-      <p>Kort briefing om HK Hovedstaden baseret på offentligt tilgængelige kilder fra HK.dk.</p>
-      <div class="summary-grid">
-        ${stats.map((s) => `<article class="card"><b>${s.fields.label.value}</b><div>${s.fields.value.value}</div><div class="small">Pr. ${s.fields.asOf.value}</div>${tag(s.fields.value.confidence)}${sourceLinks(s.fields.value.sources)}</article>`).join('')}
-      </div>
-      <p class="small">Seneste opdatering: ${today}. Se også <a href="#metode">Metode & Kilder</a>.</p>
-    </section>
+function bindPeople() {
+  const list = document.querySelector('#people-list');
+  const search = document.querySelector('#person-search');
+  const filter = document.querySelector('#person-filter');
 
-    <section class="section" id="organisation">
-      <h2>Organisation & Ledelse</h2>
-      <p>Strukturen skelner mellem politisk ledelse (fx forperson/formænd) og daglig ledelse (ikke fuldt offentligt specificeret pr. person).</p>
-      <div class="org-controls">
-        <input id="search" placeholder="Søg person/rolle" aria-label="Søg person eller rolle" />
-        <button id="zoom-in">Zoom +</button><button id="zoom-out">Zoom -</button>
-      </div>
-      <div id="chart-viewport"><div id="chart"></div></div>
-    </section>
-
-    <section class="section" id="personer">
-      <h2>Personer</h2>
-      <label>Filter: 
-        <select id="category-filter" aria-label="Filtrer personer">
-          <option>Alle</option><option>Politisk ledelse</option><option>Daglig ledelse</option><option>Udvalg</option><option>Andet</option>
-        </select>
-      </label>
-      <table><thead><tr><th>Navn</th><th>Rolle</th><th>Kategori</th><th>Scope</th></tr></thead><tbody id="people-body"></tbody></table>
-    </section>
-
-    <section class="section" id="medlemmer">
-      <h2>Medlemmer & Relation til HK (overordnet)</h2>
-      <ul>
-        <li>HK Hovedstaden beskrives som lokalafdeling under HK Danmark.</li>
-        <li>HK's kongres er øverste myndighed i forbundet; hovedbestyrelsen er øverste myndighed mellem kongresserne.</li>
-      </ul>
-      ${sourceLinks(['https://www.hk.dk/omhk/fakta-om-hk','https://www.hk.dk/omhk/fakta-om-hk/politisk-ledelse/hk-danmarks-hovedbestyrelse','https://www.hk.dk/omhk/afdeling/hk-hovedstaden/om-hk-hovedstaden-original'])}
-      <p>Medlemsudvikling over tid: <b>Ikke oplyst (offentligt)</b> i de anvendte kilder.</p>
-    </section>
-
-    <section class="section" id="metode">
-      <h2>Metode & Kilder</h2>
-      <p>Data er manuelt indsamlet fra offentlige HK-kilder. Hvert datafelt har kilde-URL og confidence-tag.</p>
-      <h3>Begrænsninger</h3>
-      <ul>
-        <li>Ikke alle roller/personer i HK Hovedstadens daglige ledelse fremgår eksplicit med navne i åbne kilder.</li>
-        <li>Politisk ståsted er sat til “Ikke oplyst”, medmindre eksplicit dokumenteret.</li>
-      </ul>
-      <h3>Kildeliste</h3>
-      <ul>${sources.map((s) => `<li><a href="${s.url}">${s.title}</a> (besøgt: ${s.visitedAt})</li>`).join('')}</ul>
-    </section>`;
-
-  const chart = document.getElementById('chart');
-  chart.innerHTML = `<div class="node" data-id="hk-danmark">HK Danmark</div><div>⬇</div><div class="node" data-id="hk-hovedstaden">HK Hovedstaden</div><div>⬇</div>${people.map((p) => `<div class="node person" data-id="${p.id}">${p.fields.name.value}<br/><span class='small'>${p.fields.title.value}</span></div>`).join('')}`;
-
-  let scale = 1;
-  document.getElementById('zoom-in').onclick = () => { scale += 0.1; chart.style.transform = `scale(${scale})`; };
-  document.getElementById('zoom-out').onclick = () => { scale = Math.max(0.6, scale - 0.1); chart.style.transform = `scale(${scale})`; };
-
-  const modal = document.getElementById('person-modal');
-  const modalContent = document.getElementById('modal-content');
-  document.getElementById('close-modal').onclick = () => modal.close();
-  chart.querySelectorAll('.person').forEach((n) => n.addEventListener('click', () => openPerson(n.dataset.id)));
-
-  const peopleBody = document.getElementById('people-body');
-  const filter = document.getElementById('category-filter');
-  function paintPeople() {
+  function paint() {
+    const q = search.value.toLowerCase();
     const cat = filter.value;
-    peopleBody.innerHTML = people.filter((p) => cat === 'Alle' || p.fields.category.value === cat).map((p) =>
-      `<tr><td><a href="#person/${p.id}">${p.fields.name.value}</a></td><td>${p.fields.title.value}</td><td>${p.fields.category.value}</td><td>${p.fields.scope.value}</td></tr>`).join('');
-  }
-  filter.onchange = paintPeople;
-  paintPeople();
+    list.innerHTML = people
+      .filter((p) => (cat === 'Alle' || p.fields.category.value === cat) && `${p.fields.name.value} ${p.fields.title.value}`.toLowerCase().includes(q))
+      .map(
+        (p) => `<button class="person-card" data-person="${p.id}"><h3>${p.fields.name.value}</h3><p>${p.fields.title.value}</p>${confidenceTag(
+          p.fields.title.confidence
+        )}</button>`
+      )
+      .join('');
 
-  document.getElementById('search').addEventListener('input', (e) => {
-    const q = e.target.value.toLowerCase();
-    chart.querySelectorAll('.person').forEach((el) => {
-      el.style.display = el.textContent.toLowerCase().includes(q) ? 'inline-block' : 'none';
+    list.querySelectorAll('[data-person]').forEach((btn) => {
+      btn.addEventListener('click', () => openPersonModal(btn.getAttribute('data-person')));
     });
-  });
-
-  function openPerson(id) {
-    const p = people.find((x) => x.id === id);
-    if (!p) return;
-    modalContent.innerHTML = `<h3>${p.fields.name.value}</h3>${Object.entries(p.fields).map(([k, v]) => `<p><b>${k}</b>: ${v.value} ${tag(v.confidence)} ${sourceLinks(v.sources)}</p>`).join('')}`;
-    modal.showModal();
   }
 
-  if (location.hash.startsWith('#person/')) openPerson(location.hash.replace('#person/', ''));
+  search.addEventListener('input', paint);
+  filter.addEventListener('change', paint);
+  paint();
 }
 
-render();
+function bindDiagramModal() {
+  const btn = document.querySelector('#open-diagram');
+  if (!btn) return;
+  btn.addEventListener('click', () => openDiagramModal());
+}
+
+function openPersonModal(personId) {
+  const p = people.find((x) => x.id === personId);
+  const dialog = document.querySelector('#modal');
+  const body = dialog.querySelector('.modal-body');
+  body.innerHTML = `<h3>${p.fields.name.value}</h3>${Object.entries(p.fields)
+    .map(([k, v]) => `<p><b>${k}</b>: ${v.value} ${confidenceTag(v.confidence)} ${sourceLinks(v.sources)}</p>`)
+    .join('')}`;
+  dialog.showModal();
+}
+
+function openDiagramModal() {
+  const dialog = document.querySelector('#modal');
+  const body = dialog.querySelector('.modal-body');
+  body.innerHTML = `<h3>Organisationsdiagram</h3>
+    <div class="zoom-controls"><button id="zoom-plus">+</button><button id="zoom-minus">−</button><button id="zoom-reset">Reset</button></div>
+    <div class="zoom-stage" id="zoom-stage"><img src="./assets/orgdiagram.svg" id="zoom-img" alt="Organisationsdiagram forstørret"/></div>`;
+  dialog.showModal();
+  let zoom = 1;
+  const img = body.querySelector('#zoom-img');
+  body.querySelector('#zoom-plus').onclick = () => ((zoom += 0.2), (img.style.transform = `scale(${zoom})`));
+  body.querySelector('#zoom-minus').onclick = () => ((zoom = Math.max(0.5, zoom - 0.2)), (img.style.transform = `scale(${zoom})`));
+  body.querySelector('#zoom-reset').onclick = () => ((zoom = 1), (img.style.transform = 'scale(1)'));
+}
+
+document.querySelector('#modal-close').addEventListener('click', () => document.querySelector('#modal').close());
+window.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') document.querySelector('#modal').close();
+});

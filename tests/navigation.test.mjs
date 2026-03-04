@@ -4,13 +4,7 @@ import fs from 'node:fs';
 
 const html = fs.readFileSync('index.html', 'utf8');
 
-const expectedAnchors = [
-  '#overblik',
-  '#organisation',
-  '#personer',
-  '#medlemmer',
-  '#metode'
-];
+const expectedAnchors = ['#overblik', '#kpi', '#organisation', '#personer', '#medlemmer', '#tilbud', '#metode'];
 
 test('navigation indeholder alle hovedsektioner', () => {
   expectedAnchors.forEach((anchor) => {
@@ -18,6 +12,6 @@ test('navigation indeholder alle hovedsektioner', () => {
   });
 });
 
-test('modal til personvisning findes', () => {
-  assert.ok(html.includes('id="person-modal"'));
+test('modal til person/diagram visning findes', () => {
+  assert.ok(html.includes('id="modal"'));
 });
