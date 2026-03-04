@@ -1,0 +1,59 @@
+:root {
+  --primary: #123a78;
+  --primary-dark: #0b2853;
+  --accent: #2f6fec;
+  --bg: #f3f7fc;
+  --surface: #fff;
+  --text: #142033;
+  --muted: #5b6b83;
+  --radius: 14px;
+  --shadow: 0 8px 28px rgba(15, 23, 42, 0.08);
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Inter, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background: var(--bg); color: var(--text); }
+a { color: var(--accent); }
+.topnav { position: sticky; top: 0; z-index: 20; background: linear-gradient(90deg, var(--primary-dark), var(--primary)); color: #fff; box-shadow: var(--shadow); }
+.topnav .inner { max-width: 1160px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 18px; padding: 14px 18px; }
+.brand { font-weight: 700; }
+.menu { display: flex; flex-wrap: wrap; gap: 12px; }
+.menu a { color: #dbeafe; text-decoration: none; font-size: 14px; }
+#app { max-width: 1160px; margin: 20px auto 64px; padding: 0 16px; }
+.hero { background: radial-gradient(circle at top right, #dbeafe, #eff6ff 45%, #fff); border-radius: 18px; padding: 28px; box-shadow: var(--shadow); margin-bottom: 16px; }
+.eyebrow { letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-size: 12px; }
+.hero h1 { margin: 6px 0 8px; font-size: clamp(28px,4vw,42px); }
+.lead { color: #334155; max-width: 70ch; }
+.hero-meta { display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; margin-top:10px; color: var(--muted); }
+.section { background: var(--surface); border-radius: var(--radius); padding: 20px; box-shadow: var(--shadow); margin-top: 14px; }
+.section h2 { margin-top: 0; }
+.kpi-grid, .cards-3 { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+.card, .person-card { border: 1px solid #dbe5f3; border-radius: 12px; padding: 14px; background: #fcfdff; }
+.card h3, .person-card h3 { margin: 0 0 6px; font-size: 18px; }
+.meta { font-size: 12px; color: var(--muted); }
+.sources { font-size: 12px; color: var(--muted); margin-top: 8px; }
+.tag { display: inline-block; margin-top: 6px; border-radius: 99px; font-size: 12px; padding: 4px 8px; font-weight: 600; }
+.tag[data-confidence='Bekræftet'] { background: #dcfce7; color: #166534; }
+.tag[data-confidence='Delvist bekræftet'] { background: #fef3c7; color: #92400e; }
+.tag[data-confidence='Ikke oplyst'] { background: #e2e8f0; color: #334155; }
+.layout-two { display:grid; grid-template-columns: 1.1fr 1fr; gap: 14px; }
+.diagram img { width: 100%; border-radius: 10px; border: 1px solid #d1d9e6; }
+.btn { background: var(--primary); color: white; border: none; border-radius: 10px; padding: 10px 12px; cursor: pointer; }
+.toolbar { display:flex; gap:10px; flex-wrap: wrap; margin-bottom: 12px; }
+input, select { border:1px solid #c8d4e6; border-radius: 10px; padding: 10px; }
+.people-grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap: 10px; }
+.person-card { text-align: left; cursor: pointer; }
+.source-list { list-style: none; padding: 0; display:grid; gap:10px; }
+.source-list li { border: 1px solid #dbe5f3; border-radius: 10px; padding: 12px; }
+.note { font-size: 14px; color: #334155; }
+#modal { border: none; border-radius: 14px; width: min(980px, 92vw); }
+.modal-head { display:flex; justify-content: space-between; align-items:center; margin-bottom: 8px; }
+.modal-head button { border:none; background:transparent; font-size: 24px; cursor: pointer; }
+.zoom-controls { display:flex; gap:8px; margin-bottom:8px; }
+.zoom-controls button { padding:6px 10px; }
+.zoom-stage { overflow:auto; border:1px solid #dbe5f3; border-radius:10px; max-height: 70vh; }
+#zoom-img { width: 100%; transform-origin: top left; }
+@media (max-width: 900px) { .layout-two { grid-template-columns: 1fr; } }
+@media print {
+  .topnav, .btn, .toolbar, #modal { display:none !important; }
+  #app { max-width: none; margin: 0; }
+  .section, .hero { box-shadow: none; border:1px solid #d9d9d9; }
+}

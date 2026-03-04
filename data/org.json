@@ -1,0 +1,36 @@
+{
+  "entities": [
+    {
+      "id": "hk-danmark",
+      "fields": {
+        "name": {"value": "HK Danmark", "sources": ["https://www.hk.dk/omhk/organisationen"], "confidence": "Bekræftet"},
+        "type": {"value": "Forbund", "sources": ["https://www.hk.dk/omhk/organisationen"], "confidence": "Bekræftet"},
+        "topAuthority": {"value": "Kongressen", "sources": ["https://www.hk.dk/omhk/organisationen"], "confidence": "Bekræftet"},
+        "betweenCongressesAuthority": {"value": "Hovedbestyrelsen", "sources": ["https://www.hk.dk/omhk/fakta-om-hk/politisk-ledelse/hk-danmarks-hovedbestyrelse"], "confidence": "Bekræftet"}
+      }
+    },
+    {
+      "id": "hk-hovedstaden",
+      "fields": {
+        "name": {"value": "HK Hovedstaden", "sources": ["https://www.hk.dk/omhk/afdeling/hk-hovedstaden/om-hk-hovedstaden-original"], "confidence": "Bekræftet"},
+        "type": {"value": "Lokalafdeling", "sources": ["https://www.hk.dk/omhk/afdeling/hk-hovedstaden/om-hk-hovedstaden-original"], "confidence": "Bekræftet"},
+        "description": {"value": "Største lokalafdeling i HK med medlemmer i Region Hovedstaden samt i Grønland og på Færøerne.", "sources": ["https://www.hk.dk/omhk/afdeling/hk-hovedstaden/om-hk-hovedstaden-original"], "confidence": "Bekræftet"},
+        "topAuthority": {"value": "Repræsentantskabet", "sources": ["https://www.hk.dk/omhk/afdeling/hk-hovedstaden/om-hk-hovedstaden-original"], "confidence": "Bekræftet"},
+        "representationCount": {"value": 171, "sources": ["https://www.hk.dk/omhk/afdeling/hk-hovedstaden/om-hk-hovedstaden-original"], "confidence": "Bekræftet"},
+        "offersNetworking": {"value": "Brancheklubber i HK Hovedstaden", "sources": ["https://www.hk.dk/omhk/afdeling/hk-hovedstaden/brancheklubber"], "confidence": "Bekræftet"},
+        "offersJobboard": {"value": "HK JobBørs (headhunting/jobmatch)", "sources": ["https://www.hk.dk/karriere/jobboers", "https://www.hk.dk/omhk/afdeling/hk-hovedstaden"], "confidence": "Bekræftet"},
+        "offersCourses": {"value": "Kurser og arrangementer via HK Hovedstaden-kalender", "sources": ["https://www.hk.dk/aktuelt/kalender?topic-search=&searchTagString=&searchOrgString=hk%20hovedstaden&pageIndex=1&pageSize=10"], "confidence": "Bekræftet"}
+      }
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel-hovedstaden-under-hk",
+      "fields": {
+        "from": {"value": "hk-hovedstaden", "sources": ["https://www.hk.dk/omhk/afdeling/hk-hovedstaden/om-hk-hovedstaden-original"], "confidence": "Bekræftet"},
+        "to": {"value": "hk-danmark", "sources": ["https://www.hk.dk/omhk/organisationen"], "confidence": "Bekræftet"},
+        "relationType": {"value": "lokalafdeling-under-forbund", "sources": ["https://www.hk.dk/omhk/organisationen"], "confidence": "Bekræftet"}
+      }
+    }
+  ]
+}
