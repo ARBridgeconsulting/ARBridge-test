@@ -1,5 +1,17 @@
 [
   {
+    "id": "src-hk-hovedstaden-om",
+    "title": "Om HK Hovedstaden",
+    "url": "https://www.hk.dk/omhk/afdeling/hk-hovedstaden/om-hk-hovedstaden",
+    "visitedAt": "2026-03-04",
+    "supports": ["HK Hovedstaden profil", "Repræsentantskab", "Organisationsdiagram"]
+  },
+  {
+    "id": "src-hk-organisationen",
+    "title": "HK organisationen",
+    "url": "https://www.hk.dk/omhk/organisationen",
+    "visitedAt": "2026-03-04",
+    "supports": ["Forbundsstruktur", "Kongres", "Sektorer"]
     "id": "src-hk-organisationen",
     "title": "Organisationsdiagram / HK organisationen",
     "url": "https://www.hk.dk/omhk/organisationen",
@@ -11,6 +23,14 @@
     "title": "HK's historie",
     "url": "https://www.hk.dk/omhk/fakta-om-hk/historie",
     "visitedAt": "2026-03-04",
+    "supports": ["Historisk baggrund", "Stiftelse"]
+  },
+  {
+    "id": "src-hk-members-profiles",
+    "title": "Hvem er HK's medlemmer?",
+    "url": "https://www.hk.dk/omhk/fakta-om-hk/hks-medlemmer",
+    "visitedAt": "2026-03-04",
+    "supports": ["Medlemsprofiler", "Jobtyper og brancher"]
     "supports": ["Historisk kontekst", "Stiftelsesoplysninger"]
   },
   {
@@ -25,6 +45,14 @@
     "title": "HK Danmarks hovedbestyrelse",
     "url": "https://www.hk.dk/omhk/fakta-om-hk/politisk-ledelse/hk-danmarks-hovedbestyrelse",
     "visitedAt": "2026-03-04",
+    "supports": ["Politisk ledelse", "Peter Jacques Jensen rolle", "45 medlemmer"]
+  },
+  {
+    "id": "src-linkedin-pjj",
+    "title": "LinkedIn: Peter Jacques Jensen",
+    "url": "https://www.linkedin.com/in/peter-jacques-jensen-b39a6020/",
+    "visitedAt": "2026-03-04",
+    "supports": ["Reference til profil", "Begrænsning: login kan være påkrævet"]
     "supports": ["Ledelsesroller", "Forperson HK Hovedstaden", "Hovedbestyrelsens mandat"]
   },
   {
@@ -46,6 +74,7 @@
     "title": "Brancheklubber i HK Hovedstaden",
     "url": "https://www.hk.dk/omhk/afdeling/hk-hovedstaden/brancheklubber",
     "visitedAt": "2026-03-04",
+    "supports": ["Tilbud: netværk og klubber"]
     "supports": ["Tilbud: branchenetværk og klubber"]
   },
   {
@@ -53,6 +82,11 @@
     "title": "HK JobBørs",
     "url": "https://www.hk.dk/karriere/jobboers",
     "visitedAt": "2026-03-04",
+    "supports": ["Tilbud: jobhjælp"]
+  },
+  {
+    "id": "src-hk-kalender-kurser",
+    "title": "HK Hovedstaden kurser og arrangementer (kalender)",
     "supports": ["Tilbud: jobbørs"]
   },
   {

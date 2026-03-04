@@ -3,6 +3,56 @@
     {
       "id": "peter-jacques-jensen",
       "fields": {
+        "name": {
+          "value": "Peter Jacques Jensen",
+          "sources": ["https://www.hk.dk/omhk/fakta-om-hk/politisk-ledelse/hk-danmarks-hovedbestyrelse"],
+          "confidence": "Bekræftet"
+        },
+        "shortBio": {
+          "value": "Peter Jacques Jensen fremgår i HK Danmarks hovedbestyrelse som forperson for HK Hovedstaden. De offentlige HK-kilder, der er brugt her, beskriver rollen men giver ikke en detaljeret offentlig profil om baggrund, uddannelse eller fokusområder.",
+          "sources": [
+            "https://www.hk.dk/omhk/fakta-om-hk/politisk-ledelse/hk-danmarks-hovedbestyrelse",
+            "https://www.hk.dk/omhk/afdeling/hk-hovedstaden/om-hk-hovedstaden"
+          ],
+          "confidence": "Bekræftet"
+        },
+        "currentRole": {
+          "value": "Forperson, HK Hovedstaden",
+          "sources": ["https://www.hk.dk/omhk/fakta-om-hk/politisk-ledelse/hk-danmarks-hovedbestyrelse"],
+          "confidence": "Bekræftet"
+        },
+        "experienceSelected": {
+          "value": "Ikke oplyst (offentligt)",
+          "sources": [
+            "https://www.hk.dk/omhk/fakta-om-hk/politisk-ledelse/hk-danmarks-hovedbestyrelse",
+            "https://www.linkedin.com/in/peter-jacques-jensen-b39a6020/"
+          ],
+          "confidence": "Ikke oplyst"
+        },
+        "education": {
+          "value": "Ikke oplyst (offentligt)",
+          "sources": [
+            "https://www.linkedin.com/in/peter-jacques-jensen-b39a6020/"
+          ],
+          "confidence": "Ikke oplyst"
+        },
+        "focusAreas": {
+          "value": "Ikke oplyst (offentligt)",
+          "sources": [
+            "https://www.hk.dk/omhk/fakta-om-hk/politisk-ledelse/hk-danmarks-hovedbestyrelse"
+          ],
+          "confidence": "Ikke oplyst"
+        },
+        "nameVariantCheck": {
+          "value": "Stavemåden 'Peter Shaques Jensen' er ikke fundet i de anvendte officielle kilder. Officiel stavemåde i kilderne: Peter Jacques Jensen.",
+          "sources": ["https://www.hk.dk/omhk/fakta-om-hk/politisk-ledelse/hk-danmarks-hovedbestyrelse"],
+          "confidence": "Bekræftet"
+        },
+        "category": {
+          "value": "Politisk ledelse",
+          "sources": ["https://www.hk.dk/omhk/fakta-om-hk/politisk-ledelse/hk-danmarks-hovedbestyrelse"],
+          "confidence": "Bekræftet"
+        }
         "name": {"value": "Peter Jacques Jensen", "sources": ["https://www.hk.dk/omhk/fakta-om-hk/politisk-ledelse/hk-danmarks-hovedbestyrelse"], "confidence": "Bekræftet"},
         "requestedNameVariant": {"value": "Peter Shaques Jensen (ikke fundet som officiel stavemåde i anvendte kilder)", "sources": ["https://www.hk.dk/omhk/fakta-om-hk/politisk-ledelse/hk-danmarks-hovedbestyrelse"], "confidence": "Ikke oplyst"},
         "title": {"value": "Forperson, HK Hovedstaden", "sources": ["https://www.hk.dk/omhk/fakta-om-hk/politisk-ledelse/hk-danmarks-hovedbestyrelse"], "confidence": "Bekræftet"},
@@ -17,6 +67,8 @@
       "id": "mads-samsing",
       "fields": {
         "name": {"value": "Mads Samsing", "sources": ["https://www.hk.dk/omhk/fakta-om-hk/politisk-ledelse/hk-danmarks-hovedbestyrelse"], "confidence": "Bekræftet"},
+        "currentRole": {"value": "Forbundsformand, HK Danmark", "sources": ["https://www.hk.dk/omhk/fakta-om-hk/politisk-ledelse/hk-danmarks-hovedbestyrelse"], "confidence": "Bekræftet"},
+        "category": {"value": "Politisk ledelse", "sources": ["https://www.hk.dk/omhk/fakta-om-hk/politisk-ledelse/hk-danmarks-hovedbestyrelse"], "confidence": "Bekræftet"}
         "title": {"value": "Forbundsformand, HK Danmark", "sources": ["https://www.hk.dk/omhk/fakta-om-hk/politisk-ledelse/hk-danmarks-hovedbestyrelse"], "confidence": "Bekræftet"},
         "category": {"value": "Politisk ledelse", "sources": ["https://www.hk.dk/omhk/fakta-om-hk/politisk-ledelse/hk-danmarks-hovedbestyrelse"], "confidence": "Bekræftet"},
         "scope": {"value": "HK Danmark", "sources": ["https://www.hk.dk/omhk/fakta-om-hk/politisk-ledelse/hk-danmarks-hovedbestyrelse"], "confidence": "Bekræftet"},

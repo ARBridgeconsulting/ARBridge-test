@@ -3,6 +3,27 @@
     {
       "id": "hk-total-members",
       "fields": {
+        "label": {
+          "value": "Medlemmer af HK Danmark i alt",
+          "sources": [
+            "https://www.hk.dk/omhk/fakta-om-hk/medlemstal"
+          ],
+          "confidence": "Bekræftet"
+        },
+        "value": {
+          "value": 207701,
+          "sources": [
+            "https://www.hk.dk/omhk/fakta-om-hk/medlemstal"
+          ],
+          "confidence": "Bekræftet"
+        },
+        "asOf": {
+          "value": "2026-01-31",
+          "sources": [
+            "https://www.hk.dk/omhk/fakta-om-hk/medlemstal"
+          ],
+          "confidence": "Bekræftet"
+        }
         "label": {"value": "Medlemmer af HK Danmark i alt", "sources": ["https://www.hk.dk/omhk/fakta-om-hk/medlemstal"], "confidence": "Bekræftet"},
         "value": {"value": 207701, "sources": ["https://www.hk.dk/omhk/fakta-om-hk/medlemstal"], "confidence": "Bekræftet"},
         "asOf": {"value": "2026-01-31", "sources": ["https://www.hk.dk/omhk/fakta-om-hk/medlemstal"], "confidence": "Bekræftet"}
@@ -11,6 +32,27 @@
     {
       "id": "hk-employed-members",
       "fields": {
+        "label": {
+          "value": "Erhvervsaktive medlemmer",
+          "sources": [
+            "https://www.hk.dk/omhk/fakta-om-hk/medlemstal"
+          ],
+          "confidence": "Bekræftet"
+        },
+        "value": {
+          "value": 158944,
+          "sources": [
+            "https://www.hk.dk/omhk/fakta-om-hk/medlemstal"
+          ],
+          "confidence": "Bekræftet"
+        },
+        "asOf": {
+          "value": "2026-01-31",
+          "sources": [
+            "https://www.hk.dk/omhk/fakta-om-hk/medlemstal"
+          ],
+          "confidence": "Bekræftet"
+        }
         "label": {"value": "Erhvervsaktive medlemmer", "sources": ["https://www.hk.dk/omhk/fakta-om-hk/medlemstal"], "confidence": "Bekræftet"},
         "value": {"value": 158944, "sources": ["https://www.hk.dk/omhk/fakta-om-hk/medlemstal"], "confidence": "Bekræftet"},
         "asOf": {"value": "2026-01-31", "sources": ["https://www.hk.dk/omhk/fakta-om-hk/medlemstal"], "confidence": "Bekræftet"}
@@ -19,6 +61,31 @@
     {
       "id": "hk-hovedstaden-members",
       "fields": {
+        "label": {
+          "value": "HK Hovedstaden medlemmer",
+          "sources": [
+            "https://www.hk.dk/omhk/afdeling/hk-hovedstaden/om-hk-hovedstaden"
+          ],
+          "confidence": "Bekræftet"
+        },
+        "value": {
+          "value": "Over 75.000",
+          "sources": [
+            "https://www.hk.dk/omhk/afdeling/hk-hovedstaden/om-hk-hovedstaden"
+          ],
+          "confidence": "Delvist bekræftet"
+        },
+        "asOf": {
+          "value": "Ikke oplyst (offentligt)",
+          "sources": [
+            "https://www.hk.dk/omhk/afdeling/hk-hovedstaden/om-hk-hovedstaden"
+          ],
+          "confidence": "Ikke oplyst"
+        }
+      }
+    }
+  ]
+}
         "label": {"value": "HK Hovedstaden medlemmer", "sources": ["https://www.hk.dk/omhk/afdeling/hk-hovedstaden/om-hk-hovedstaden-original"], "confidence": "Bekræftet"},
         "value": {"value": "Over 75.000", "sources": ["https://www.hk.dk/omhk/afdeling/hk-hovedstaden/om-hk-hovedstaden-original"], "confidence": "Delvist bekræftet"},
         "asOf": {"value": "Ikke oplyst (offentligt)", "sources": ["https://www.hk.dk/omhk/afdeling/hk-hovedstaden/om-hk-hovedstaden-original"], "confidence": "Ikke oplyst"}

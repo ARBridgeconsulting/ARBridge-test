@@ -6,12 +6,23 @@
         "name": {"value": "HK Danmark", "sources": ["https://www.hk.dk/omhk/organisationen"], "confidence": "Bekræftet"},
         "type": {"value": "Forbund", "sources": ["https://www.hk.dk/omhk/organisationen"], "confidence": "Bekræftet"},
         "topAuthority": {"value": "Kongressen", "sources": ["https://www.hk.dk/omhk/organisationen"], "confidence": "Bekræftet"},
+        "betweenCongressesAuthority": {"value": "Hovedbestyrelsen", "sources": ["https://www.hk.dk/omhk/fakta-om-hk/politisk-ledelse/hk-danmarks-hovedbestyrelse"], "confidence": "Bekræftet"},
+        "sectors": {"value": "HK er opdelt i 4 sektorer", "sources": ["https://www.hk.dk/omhk/organisationen"], "confidence": "Bekræftet"}
         "betweenCongressesAuthority": {"value": "Hovedbestyrelsen", "sources": ["https://www.hk.dk/omhk/fakta-om-hk/politisk-ledelse/hk-danmarks-hovedbestyrelse"], "confidence": "Bekræftet"}
       }
     },
     {
       "id": "hk-hovedstaden",
       "fields": {
+        "name": {"value": "HK Hovedstaden", "sources": ["https://www.hk.dk/omhk/afdeling/hk-hovedstaden/om-hk-hovedstaden"], "confidence": "Bekræftet"},
+        "type": {"value": "Lokalafdeling", "sources": ["https://www.hk.dk/omhk/afdeling/hk-hovedstaden/om-hk-hovedstaden"], "confidence": "Bekræftet"},
+        "description": {"value": "HK Hovedstaden beskrives som den største lokalafdeling i HK med medlemmer i Region Hovedstaden samt i Grønland og på Færøerne.", "sources": ["https://www.hk.dk/omhk/afdeling/hk-hovedstaden/om-hk-hovedstaden"], "confidence": "Bekræftet"},
+        "topAuthority": {"value": "Repræsentantskabet", "sources": ["https://www.hk.dk/omhk/afdeling/hk-hovedstaden/om-hk-hovedstaden"], "confidence": "Bekræftet"},
+        "representationCount": {"value": 171, "sources": ["https://www.hk.dk/omhk/afdeling/hk-hovedstaden/om-hk-hovedstaden"], "confidence": "Bekræftet"},
+        "orgDiagramImage": {"value": "https://www.hk.dk/-/media/images/om-hk/afdelinger/hovedstaden/diverse/hk_organisationsdiagram_2024udenfotos.jpg?la=da&h=1296&w=2229&hash=D82E044E2C205F12B12AE00B89F65A0A", "sources": ["https://www.hk.dk/omhk/afdeling/hk-hovedstaden/om-hk-hovedstaden"], "confidence": "Bekræftet"},
+        "offersNetworking": {"value": "Brancheklubber i HK Hovedstaden", "sources": ["https://www.hk.dk/omhk/afdeling/hk-hovedstaden/brancheklubber"], "confidence": "Bekræftet"},
+        "offersJobboard": {"value": "HK JobBørs", "sources": ["https://www.hk.dk/karriere/jobboers"], "confidence": "Bekræftet"},
+        "offersCourses": {"value": "Kurser og arrangementer via HK-kalenderen", "sources": ["https://www.hk.dk/aktuelt/kalender?topic-search=&searchTagString=&searchOrgString=hk%20hovedstaden&pageIndex=1&pageSize=10"], "confidence": "Bekræftet"}
         "name": {"value": "HK Hovedstaden", "sources": ["https://www.hk.dk/omhk/afdeling/hk-hovedstaden/om-hk-hovedstaden-original"], "confidence": "Bekræftet"},
         "type": {"value": "Lokalafdeling", "sources": ["https://www.hk.dk/omhk/afdeling/hk-hovedstaden/om-hk-hovedstaden-original"], "confidence": "Bekræftet"},
         "description": {"value": "Største lokalafdeling i HK med medlemmer i Region Hovedstaden samt i Grønland og på Færøerne.", "sources": ["https://www.hk.dk/omhk/afdeling/hk-hovedstaden/om-hk-hovedstaden-original"], "confidence": "Bekræftet"},
@@ -27,6 +38,9 @@
     {
       "id": "rel-hovedstaden-under-hk",
       "fields": {
+        "from": {"value": "HK Hovedstaden", "sources": ["https://www.hk.dk/omhk/afdeling/hk-hovedstaden/om-hk-hovedstaden"], "confidence": "Bekræftet"},
+        "to": {"value": "HK Danmark", "sources": ["https://www.hk.dk/omhk/organisationen"], "confidence": "Bekræftet"},
+        "relationType": {"value": "Lokalafdeling under HK Danmark", "sources": ["https://www.hk.dk/omhk/organisationen", "https://www.hk.dk/omhk/afdeling/hk-hovedstaden/om-hk-hovedstaden"], "confidence": "Bekræftet"}
         "from": {"value": "hk-hovedstaden", "sources": ["https://www.hk.dk/omhk/afdeling/hk-hovedstaden/om-hk-hovedstaden-original"], "confidence": "Bekræftet"},
         "to": {"value": "hk-danmark", "sources": ["https://www.hk.dk/omhk/organisationen"], "confidence": "Bekræftet"},
         "relationType": {"value": "lokalafdeling-under-forbund", "sources": ["https://www.hk.dk/omhk/organisationen"], "confidence": "Bekræftet"}
